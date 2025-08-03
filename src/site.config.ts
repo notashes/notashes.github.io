@@ -55,7 +55,8 @@ export const theme: ThemeUserConfig = {
     ]
   },
 
-  /** Configure the footer of your site. */
+  /** Configure the footer of your site. */    credits: false,
+
   footer: {
     // Year format
     year: `© ${new Date().getFullYear()}`,
