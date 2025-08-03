@@ -75,7 +75,7 @@ export const theme: ThemeUserConfig = {
       // }
     ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
-    credits: true,
+    credits: false,
   },
 
   content: {

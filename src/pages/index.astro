@@ -11,7 +11,7 @@ import avatar from '@/assets/avatar.png'
 import config from '@/site-config'
 
 const languages = ['Rust', 'Zig', 'Go', 'C']
-const favourites = ['Arch Linux', 'Neovim', 'Hyprland', 'kitty']
+const favourites = ['Arch Linux', 'Hyprland', 'Neovim', 'kitty']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -37,7 +37,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           <Label
             title='Email'
             as='a'
-            href='mailto:bilbobaggins20711@gmail.com'
+            href='mailto:hi@notashes.me'
             target='_blank'
           >
             <Icon name='email' class='size-5' slot='icon' />
