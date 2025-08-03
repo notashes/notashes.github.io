@@ -1,0 +1,35 @@
+---
+import type { MarkdownHeading } from 'astro'
+
+import { TOC } from 'astro-pure/components/pages'
+import PageLayout from '@/layouts/ContentLayout.astro'
+
+interface Props {
+  title: string
+  headings?: MarkdownHeading[]
+  info?:
+    | string
+    | {
+        slug: string
+        hideComment?: boolean
+      }
+}
+
+const { title, headings, info, ...props } = Astro.props
+---
+
+<PageLayout meta={{ title }} {...props}>
+  {headings?.length && <TOC headings={headings} slot='sidebar' />}
+
+  <Fragment slot='header'>
+    <h1 class='text-2xl font-medium sm:mb-2 sm:text-3xl'>
+      {title}
+    </h1>
+  </Fragment>
+
+  <slot />
+
+  <slot name='bottom' slot='bottom' />
+
+  <slot name='bottom-sidebar' slot='bottom-sidebar' />
+</PageLayout>

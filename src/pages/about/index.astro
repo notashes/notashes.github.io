@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets'
+
+import { Timeline } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import avatar from '@/assets/avatar.png'
+
+const headings = [
+  { depth: 2, slug: 'about', text: 'About me' },
+  { depth: 2, slug: 'tools', text: 'Favourite sci-fi books' },
+  { depth: 2, slug: 'about-this-blog', text: 'About this blog' },
+]
+---
+
+<PageLayout title='' {headings} info='/about'>
+  <h2 id='about'>About me</h2>
+  <main class='flex w-full flex-col items-center'>
+    <Image
+      src={avatar}
+      alt='ashes'
+      class='h-48 w-auto rounded-full border p-1'
+      ='eager'
+    />    
+  </main>
+  <p>
+    I am a system engineer by heart and love to build things that are closer to these sillicon systems that govern our world.
+  </p>
+  <p>
+    I love open-source software and self-hosting. In fact, I've been managing my own self-hosted media server of sorts for the last four years. 
+  </p>
+  
+  <p>
+    An about me section wouldn't be complete without mentining my new-found love for reading. It started with a clissic - Stoner by John Williams,
+    however I soon found myself unable to hold back from the beautiful worlds of speculative fiction. And you get all sorts of variety. From Neal Stephenson's
+    <i>Anathem</i> to Ursula K. Le Guin's <i>The Dispossessed</i>, and Robin Hobb's <i>Assassin's Apprentice</i> - I could go on and on... 
+  </p>
+
+  {/* general-talk */}
+  <h2 id='books'>Some of my favourite speculative fiction</h2>
+  <ul>
+    <li><i>The Book of the New Sun</i>, by Gene Wolfe</li>
+    <li><i>The Name of the Wind</i>, by Patrick Rothfuss</li>
+    <li><i>The Devils</i>, by Joe Abercrombie</li>
+    <li><i>Exhalation</i>, by Ted Chiang</li>
+  </ul>
+
+    <h2 id='books'>favourite movies & shows</h2>
+  <ul>
+    <li><i>Interstellar</i>, by Christopher Nolan</li>
+    <li><i>Eternal Sunshine of the Spotless Mind</i>, by Charlie Kaufman</li>
+    <li><i>Westworld</i>, by Jonathon Nolan</li>
+    <li><i>Mr. Robot</i>, by Sam Esmail</li>
+  </ul>
+
+
+    Reach out to me <a href='https://x.com/itsnota'>on X</a> to recommend some excellent hard sci-fi
+    books of this calibre!
+
+  {/* gossips 
+  <h2 id='gossips'>Gossips</h2>
+  <Collapse title='Lorem ipsum'>
+    Any specific gossip here
+  </Collapse>
+  */}
+
+  {/* about-this-blog */}
+  <h2 id='about-this-blog'>About this blog</h2>
+  <p>It'll be my own experimental ground to write about things or thoughts I find interesting (I hope). 🌎 </p>
+  <Timeline
+    events={[
+      {
+        date: 'sometime-early-2000s',
+        content: 'i was born'
+      }
+    ]}
+  />
+  if you stumbled here - feel free to reach out!
+</PageLayout>
